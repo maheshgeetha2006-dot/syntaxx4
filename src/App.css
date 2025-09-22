@@ -1,0 +1,123 @@
+.map-container {
+  height: 500px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container {
+  height: calc(100vh - 200px);
+  min-height: 400px;
+}
+
+.chat-messages {
+  height: calc(100% - 80px);
+  overflow-y: auto;
+}
+
+.message-bubble {
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.message-sent {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+  color: white;
+  margin-left: auto;
+  border-radius: 18px 18px 4px 18px;
+}
+
+.message-received {
+  background: white;
+  color: #1F2937;
+  border: 1px solid #E5E7EB;
+  border-radius: 18px 18px 18px 4px;
+}
+
+.urgent-pulse {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% {
+    background-color: #DC2626;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #EF4444;
+    transform: scale(1.05);
+  }
+}
+
+.safe-zone-marker {
+  color: #10B981;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.hospital-marker {
+  color: #DC2626;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.feeding-marker {
+  color: #F59E0B;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.dog-card {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.dog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.emergency-gradient {
+  background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+}
+
+.success-gradient {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3B82F6;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .chat-container {
+    height: calc(100vh - 160px);
+  }
+  
+  .message-bubble {
+    max-width: 85%;
+  }
+  
+  .map-container {
+    height: 400px;
+  }
+}
